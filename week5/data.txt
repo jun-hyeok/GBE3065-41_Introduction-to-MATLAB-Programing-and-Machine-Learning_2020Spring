@@ -1,0 +1,26 @@
+Q.1 : What's your name? 
+A.1 : Park Jun-Hyeok
+Time: 6.97s
+
+Q.2 : How old are you? 
+A.2 : 23
+Time: 1.48s
+
+Q.3 : Are you male or female? 
+A.3 : Male
+Time: 1.79s
+
+Q.4 : Where is your home country? 
+A.4 : Korea
+Time: 2.57s
+
+Q.5 : What's your favorite color? 
+A.5 : Blue
+Time: 2.43s
+
+==Participant Info. Card==
+ - Name : Park Jun-Hyeok
+ - Age : 23
+ - Sex : Male
+ - Nationality : Korea
+ - Favorite color : Blue

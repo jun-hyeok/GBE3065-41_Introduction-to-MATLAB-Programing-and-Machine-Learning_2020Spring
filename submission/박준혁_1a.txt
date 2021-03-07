@@ -1,0 +1,270 @@
+>> help help % explanation of help function
+help - 명령 창(Command Window)에 표시되는 함수 도움말
+
+     함수, 메서드, 클래스, 툴박스, 변수와 같이 name으로 지정된 기능에 대한 도움말 텍스트를 표시합니다.
+
+    help name
+    help
+
+    참고 항목 doc, lookfor, more, what, which, whos
+
+    help에 대한 함수 도움말 페이지
+
+>> help doc % explanation of doc function
+doc - 도움말 브라우저 내 함수 도움말 페이지
+
+     도움말 브라우저를 엽니다.
+
+    doc
+    doc name
+
+    참고 항목 help, web
+
+    doc에 대한 함수 도움말 페이지
+
+>> help ver % explanation of ver function
+ver - MathWorks 제품의 버전 정보
+
+     다음이 표시됩니다.
+
+    ver
+    ver product
+    product_info = ver(product)
+
+    참고 항목 computer, help, license, matlabshared.supportpkg.getInstalled, 
+        verlessthan, version
+
+    ver에 대한 함수 도움말 페이지
+
+>> ver % run the ver function
+------------------------------------------------------------------------------------------------
+MATLAB 버전: 9.6.0.1307630 (R2019a) Update 7
+MATLAB 라이선스 번호: 975966
+운영 체제: Microsoft Windows 10 Education Version 10.0 (Build 18362)
+Java 버전: Java 1.8.0_181-b13 with Oracle Corporation Java HotSpot(TM) 64-Bit Server VM mixed mode
+------------------------------------------------------------------------------------------------
+MATLAB                                                버전 9.6              (R2019a)
+Simulink                                              버전 9.3              (R2019a)
+Control System Toolbox                                버전 10.6             (R2019a)
+Signal Processing Toolbox                             버전 8.2              (R2019a)
+Symbolic Math Toolbox                                 버전 8.3              (R2019a)
+>> help date % explanation of date function
+date - 현재 날짜를 문자형 벡터로 표현
+
+     현재 날짜를 dd-MMM-yyyy 형식의 문자형 벡터로 반환합니다.
+
+    c = date
+
+    참고 항목 datestr, datetime, now
+
+    date에 대한 함수 도움말 페이지
+
+>> date % run the date function
+
+ans =
+
+    '26-Mar-2020'
+
+>> help disp % explanation of disp function
+disp - 변수 값 표시
+
+     변수 이름을 출력하지 않고 변수 X의 값을 표시합니다.
+
+    disp(X)
+
+    참고 항목 format, fprintf, int2str, num2str, sprintf
+
+    disp에 대한 함수 도움말 페이지
+    이름이 disp인 다른 함수
+
+>> disp(ans) % run the disp function
+26-Mar-2020
+>> help calendar % explanation of calendar function
+calendar - 지정된 달의 달력
+
+     현재 달의 달력이 포함된 6x7 행렬을 반환합니다.
+
+    c = calendar
+    c = calendar(d)
+    c = calendar(y, m)
+
+    참고 항목 datenum
+
+    calendar에 대한 함수 도움말 페이지
+
+>> calendar % run the calendar function
+                   Mar 2020
+     S     M    Tu     W    Th     F     S
+     1     2     3     4     5     6     7
+     8     9    10    11    12    13    14
+    15    16    17    18    19    20    21
+    22    23    24    25    26    27    28
+    29    30    31     0     0     0     0
+     0     0     0     0     0     0     0
+
+>> help pwd % explanation of pwd function
+pwd - 현재 폴더 식별
+
+     MATLAB 현재 폴더를 표시합니다.
+
+    pwd
+    currentFolder = pwd
+
+    참고 항목 cd, dir
+
+    pwd에 대한 함수 도움말 페이지
+
+>> pwd % run the pwd function
+
+ans =
+
+    'C:\Users\JunHyeok\MATLAB Drive'
+
+>> help ls % explanation of ls function
+ls - 폴더 내용 나열
+
+     현재 폴더의 내용을 나열합니다.
+
+    ls
+    ls name
+    list = ls(___)
+
+    참고 항목 dir, pwd
+
+    ls에 대한 함수 도움말 페이지
+
+>> ls % run the ls function
+
+.                    .MATLABDriveAppData  Published            desktop.ini          
+..                   .MATLABDriveTag      Shared               
+
+>> help open % explanation of open function
+open - 적합한 응용 프로그램에서 파일 열기
+
+     지정한 파일을, 또는 지정한 변수를 적합한 응용 프로그램에서 엽니다.
+
+    open name
+    A = open(name)
+
+    참고 항목 edit, load, openfig, openvar, which, winopen
+
+    open에 대한 함수 도움말 페이지
+    이름이 open인 다른 함수
+
+>> help close % explanation of close function
+close - 지정된 Figure 제거
+
+     현재 Figure를 삭제합니다(close(gcf)와 동일).
+
+    close
+    close(h)
+    close name
+    close all
+    close all hidden
+    close all force
+    status = close(...)
+
+    참고 항목 delete, figure, gcf
+
+    close에 대한 함수 도움말 페이지
+    이름이 close인 다른 함수
+
+>> help who % explanation of who function
+who - 작업 공간에 있는 변수 나열
+
+     현재 활성화된 작업 공간에 있는 모든 변수의 이름을 사전순으로 나열합니다.
+
+    who
+    who -file filename
+    who global
+    who ___ variables
+    C = who(___)
+
+    참고 항목 assignin, clear, clearvars, exist, inmem, load, save, what, 
+        작업 공간 브라우저
+
+    who에 대한 함수 도움말 페이지
+    이름이 who인 다른 함수
+
+>> who % run the who function
+
+사용자의 변수:
+
+ans  
+
+>> help whos % explanation of whos function
+whos - 작업 공간의 변수를 크기 및 유형과 함께 나열
+
+     현재 활성화된 작업 공간에 있는 모든 변수의 이름, 크기, 유형을 사전순으로 나열합니다.
+
+    whos
+    whos -file filename
+    whos global
+    whos ___ variables
+    S = whos(___)
+
+    참고 항목 clear, exist, what, who
+
+    whos에 대한 함수 도움말 페이지
+    이름이 whos인 다른 함수
+
+>> whos % run the whos function
+  Name      Size            Bytes  Class    Attributes
+
+  ans       1x30               60  char               
+
+>> help clc % explanation of clc function
+clc - 명령 창 지우기
+
+     명령 창에서 모든 텍스트를 지워 빈 화면을 표시합니다.
+
+    clc
+
+    참고 항목 clear, clf, close, home
+
+    clc에 대한 함수 도움말 페이지
+
+>> help exit % explanation of exit function
+exit - MATLAB 프로그램 종료(quit과 동일)
+
+     MATLAB의 현재 세션을 종료합니다.
+
+    exit
+
+    참고 항목 quit
+
+    exit에 대한 함수 도움말 페이지
+
+>> help quit % explanation of quit function
+quit - MATLAB 프로그램 종료
+
+     MATLAB 프로그램을 종료합니다.
+
+    quit
+    quit cancel
+    quit force
+    quit(code)
+    quit(code,"force")
+
+    참고 항목 exit, finish, save
+
+    quit에 대한 함수 도움말 페이지
+
+>> help clear % explanation of clear function
+clear - 작업 공간에서 항목을 제거하여 시스템 메모리 늘리기
+
+     현재 작업 공간에서 모든 변수를 제거하여 시스템 메모리에서 해제합니다.
+
+    clear
+    clear name1 ... nameN
+    clear -regexp expr1 ... exprN
+    clear ItemType
+
+    참고 항목 clc, clearvars, delete, import, inmem, load, mlock, whos
+
+    clear에 대한 함수 도움말 페이지
+
+>> clear % run the clear function and check the result with whos function
+>> whos
+>> clc % run the clc function
+>> exit % run the exit function
