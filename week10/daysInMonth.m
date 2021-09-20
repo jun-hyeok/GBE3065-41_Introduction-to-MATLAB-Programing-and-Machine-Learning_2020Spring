@@ -1,85 +1,89 @@
 function main;
-% Initialize variables common to main and nested subfunctions
-month = 'January';
-year = 2001;
+    % Initialize variables common to main and nested subfunctions
+    month = 'January';
+    year = 2001;
 
-% Open the figure for the interface
-handletothefigure = figure;
+    % Open the figure for the interface
+    handletothefigure = figure;
 
-% Install a popup menu for the months
-monthstrings = {
-    'Month'
-    'January'
-    'February'
-    'March'
-    'April'
-    'May'
-    'June'
-    'July'
-    'August'
-    'September'
-    'October'
-    'November'
-    'December'};
-hmonth = uicontrol(...
-    'Style', 'popupmenu', ...
-    'String', monthstrings, ...
-    'Position', [120 320 100 20], ...
-    'Callback', @monthcallback);
+    % Install a popup menu for the months
+    monthstrings = {
+                'Month'
+                'January'
+                'February'
+                'March'
+                'April'
+                'May'
+                'June'
+                'July'
+                'August'
+                'September'
+                'October'
+                'November'
+                'December'};
+    hmonth = uicontrol(...
+        'Style', 'popupmenu', ...
+        'String', monthstrings, ...
+        'Position', [120 320 100 20], ...
+        'Callback', @monthcallback);
 
-% Install a popup menu for the years
-hyear = uicontrol(...
-    'Style', 'popupmenu', ...
-    'String', 'Year|2008|2009|2010|2011|2012|2013|2014|2015|2016|2017|2018', ...
-    'Position', [220 320 100 20], ...
-    'Callback', @yearcallback);
+    % Install a popup menu for the years
+    hyear = uicontrol(...
+        'Style', 'popupmenu', ...
+        'String', 'Year|2008|2009|2010|2011|2012|2013|2014|2015|2016|2017|2018', ...
+        'Position', [220 320 100 20], ...
+        'Callback', @yearcallback);
 
-% Install an informative text field for the popup controls
-uicontrol(...
-    'Style', 'text', ...
-    'String', 'Pick a month and a year: ', ...
-    'Position', [120, 360, 200, 15]);
+    % Install an informative text field for the popup controls
+    uicontrol(...
+        'Style', 'text', ...
+        'String', 'Pick a month and a year: ', ...
+        'Position', [120, 360, 200, 15]);
 
-% Install a GO button
-hgobutton = uicontrol(...
-    'Style', 'pushbutton', ...
-    'String', 'Look up days in the month', ...
-    'Position', [120 120 200 40], ...
-    'Callback', @gobuttoncallback);
+    % Install a GO button
+    hgobutton = uicontrol(...
+        'Style', 'pushbutton', ...
+        'String', 'Look up days in the month', ...
+        'Position', [120 120 200 40], ...
+        'Callback', @gobuttoncallback);
 
-% Now just wait for the user to finish (when the window closes)
-uiwait(handletothefigure)
-return % from main
+    % Now just wait for the user to finish (when the window closes)
+    uiwait(handletothefigure)
+    return % from main
 
-% Callback routines in nested functions:
+    % Callback routines in nested functions:
     function monthcallback(source, eventdata)
-        mylist = (get(source,'String'));
-        myitem = (get(source,'Value'));
+        mylist = (get(source, 'String'));
+        myitem = (get(source, 'Value'));
         month = char(mylist(myitem));
     end
 
     function yearcallback(source, eventdata)
-        mylist = (get(source,'String'));
-        myitem = (get(source,'Value'));
+        mylist = (get(source, 'String'));
+        myitem = (get(source, 'Value'));
         year = str2num(mylist(myitem, :));
     end
 
-    function gobuttoncallback(source, eventdata)     
+    function gobuttoncallback(source, eventdata)
         % Days_In_A_Month
         switch month
             case {'September' 'April' 'June' 'November'}
-                no_of_days = 30; % 4¿ù, 6¿ù, 9¿ù, 11¿ù
-            case 'February' % 2¿ù
-                if rem(year, 4) == 0 & (rem(year,100) ~= 0 | rem(year, 400) == 0) 
-                    no_of_days = 29; % year°¡ 100ÀÇ ¹è¼ö´Â ¾Æ´Ï°í 400ÀÇ ¹è¼ö´Â Æ÷ÇÔÇÏ´Â 4ÀÇ ¹è¼öÀÏ ¶§
+                no_of_days = 30; % 4ì›”, 6ì›”, 9ì›”, 11ì›”
+            case 'February' % 2ì›”
+
+                if rem(year, 4) == 0 & (rem(year, 100) ~= 0 | rem(year, 400) == 0)
+                    no_of_days = 29; % yearê°€ 100ì˜ ë°°ìˆ˜ëŠ” ì•„ë‹ˆê³  400ì˜ ë°°ìˆ˜ëŠ” í¬í•¨í•˜ëŠ” 4ì˜ ë°°ìˆ˜ì¼ ë•Œ
                 else
                     no_of_days = 28;
                 end
+
             otherwise
-                no_of_days = 31; % 1¿ù, 3¿ù, 5¿ù, 7¿ù, 8¿ù, 10¿ù, 12¿ù
+                no_of_days = 31; % 1ì›”, 3ì›”, 5ì›”, 7ì›”, 8ì›”, 10ì›”, 12ì›”
         end
+
         hmsg = msgbox(sprintf('%s %d has %d days.\n', month, year, no_of_days));
         uiwait(hmsg)
         close(handletothefigure)
     end
+
 end % function main

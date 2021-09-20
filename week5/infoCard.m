@@ -2,12 +2,12 @@ clear
 clc
 % 'questions' is a 5x1 string
 questions = [
-    "What's your name? " 
-    "How old are you? "
-    "Are you male or female? "
-    "Where is your home country? "
-    "What's your favorite color? "
-    ];
+        "What's your name? "
+        "How old are you? "
+        "Are you male or female? "
+        "Where is your home country? "
+        "What's your favorite color? "
+        ];
 
 % the struct array 'questionnaire' which has 5 questions is initialized
 [questionnaire(1:length(questions)).question] = questions{:};
@@ -31,12 +31,14 @@ participant.favcolor = questionnaire(5).answser;
 % print questions and answers alternately + Time
 filename = 'data.txt';
 fid = fopen(filename, 'wt');
+
 for idx = 1:length(questionnaire)
-    fprintf(fid, "Q.%d : %s\n",idx, questionnaire(idx).question);
-    fprintf(fid, "A.%d : %s\n",idx, questionnaire(idx).answser);
-    fprintf(fid, "Time: %.2fs\n\n", questionnaire(idx).time); 
+    fprintf(fid, "Q.%d : %s\n", idx, questionnaire(idx).question);
+    fprintf(fid, "A.%d : %s\n", idx, questionnaire(idx).answser);
+    fprintf(fid, "Time: %.2fs\n\n", questionnaire(idx).time);
     % to the second digit below the decimal point
 end
+
 % participant information cards is made from data in the participant structure array
 fprintf(fid, "==Participant Info. Card==\n");
 fprintf(fid, " - Name : %s\n", participant.name);

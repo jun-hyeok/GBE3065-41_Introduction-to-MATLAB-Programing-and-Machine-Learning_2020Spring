@@ -5,25 +5,25 @@ SD = 100;
 
 %% exercise 1
 % satscores is (100 x 10) matrix of scores that normally distributed and its mean = 500, sd = 100
-satscores = randn(100,10)*SD + MEAN;
-mean_satscores = mean(satscores(:)) 
+satscores = randn(100, 10) * SD + MEAN;
+mean_satscores = mean(satscores(:))
 std_satscores = std(satscores(:))
 histogram(satscores(:));
 
 %% exercise 2
 % M is a random integer vector that has 100 elements
-M = randi(100,1,100); 
+M = randi(100, 1, 100);
 mean_M = mean(M(:))
 std_M = std(M(:))
 
-idx = randi(100,1,20); % randomly draw idxArray
+idx = randi(100, 1, 20); % randomly draw idxArray
 drawedValues = M(idx(:)); % randomly draw 20 elements from M
 mean_drawedValues = mean(drawedValues(:))
 std_drawedValues = std(drawedValues(:))
 
 %% excercise 3
 % SATs is (1400 x 2) matrix of multiples of 10 that normally distributed and its mean = 500, sd = 100
-SATs = round(randn(1400,2)*SD + MEAN,-1);
+SATs = round(randn(1400, 2) * SD + MEAN, -1);
 colmean_SATs = mean(SATs)
 colstd_SATs = std(SATs)
 
@@ -48,15 +48,15 @@ std_newScores = std(newScores(:))
 
 % exercise 7
 % old scores histograms
-histogram(mathScores(:,1),'FaceColor','r');
-histogram(mathScores(:,2),'FaceColor','g');
-histogram(mathScores(:,3),'FaceColor','b');
+histogram(mathScores(:, 1), 'FaceColor', 'r');
+histogram(mathScores(:, 2), 'FaceColor', 'g');
+histogram(mathScores(:, 3), 'FaceColor', 'b');
 % new scores histograms
-histogram(newScores(:,1),'FaceColor','r');
-histogram(newScores(:,2),'FaceColor','g');
-histogram(newScores(:,3),'FaceColor','b');
+histogram(newScores(:, 1), 'FaceColor', 'r');
+histogram(newScores(:, 2), 'FaceColor', 'g');
+histogram(newScores(:, 3), 'FaceColor', 'b');
 
-%% exercise 8 
+%% exercise 8
 % floor(x) returns the greatest integer less than or equal to x
 % ceil(x) returns the least integer greater than or equal to x
 
