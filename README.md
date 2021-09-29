@@ -1,1 +1,1 @@
-# GBE3065-41_Introduction-to-matlab-programing-and-machine-learning_2020Spring
+# GBE3065-41_Introduction-to-MATLAB-Programing-and-Machine-Learning_2020Spring
